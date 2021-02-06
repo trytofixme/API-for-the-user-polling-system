@@ -113,7 +113,7 @@ python3 manage.py runserver
 }
 ```
 #### Изменение опросов
-1. URL: http://127.0.0.1:8000/api/v1/polls/update_or_delete/<int:poll_id>/
+1. URL: http://127.0.0.1:8000/api/v1/polls/update_or_delete/[poll_id]/
 2. request : PATCH
 3. Тело ответа :
 ```
@@ -138,7 +138,7 @@ python3 manage.py runserver
 ```
 
 #### Удаление опросов
-1. URL: http://127.0.0.1:8000/api/v1/polls/update_or_delete/<int:poll_id>/
+1. URL: http://127.0.0.1:8000/api/v1/polls/update_or_delete/[poll_id]/
 2. request : DELETE
 
 
@@ -238,8 +238,7 @@ python3 manage.py runserver
 ]
 ```
 
-#### Прохождение опроса
-##### Запись ответа
+#### Прохождение опроса(запись ответа)
 1. URL: http://127.0.0.1:8000/api/v1/answer/create/
 2. request : POST
 3. Тело ответа :
@@ -253,7 +252,7 @@ python3 manage.py runserver
     choice_text # Строка
 }
 ```
-##### Вывод ответа 
+#### Получение пройденных пользователем опросов с детализацией по ответам (что выбрано) по ID уникальному пользователя
 1. URL: http://127.0.0.1:8000/api/v1/answer/view/[user_id]/
 2. request : GET
 3. Тело ответа :
