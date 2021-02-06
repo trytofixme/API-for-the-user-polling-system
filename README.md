@@ -62,7 +62,7 @@ TIME_ZONE = 'Europe/Moscow'
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
-* Создания суперпользователя
+* Создание суперпользователя
 ```python
 python3 manage.py createsuperuser
 ```
