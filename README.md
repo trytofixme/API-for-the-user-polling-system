@@ -241,54 +241,31 @@ python3 manage.py runserver
 #### Прохождение опроса
 ##### Запись ответа
 1. URL: http://127.0.0.1:8000/api/v1/answer/create/
-2. request : GET
+2. request : POST
 3. Тело ответа :
 ```json
-[
-    {
-        poll_name, # Строка
-        poll_start_time, # YYYY-MM-DD HH:MM:SS
-        poll_finish_time, # YYYY-MM-DD HH:MM:SS
-        poll_description # Строка
-        questions: [
-            {
-                id,
-                question_text,           
-                question_type,       
-                choices: [      
-                    { id, question, choice_text },
-                    ...
-                ]
-            },
-            ...
-        ]
-    },
-    ...
-]
+{
+    id, # id ответа
+    user_id, # id пользователя
+    poll : [{...}]
+    question : [{...}]
+    choice, # Строка
+    choice_text # Строка
+}
 ```
 ##### Вывод ответа 
-1. URL: http://127.0.0.1:8000/api/v1/polls/available/
+1. URL: http://127.0.0.1:8000/api/v1/answer/view/<int:user_id>/
 2. request : GET
 3. Тело ответа :
 ```json
 [
-    {
-        poll_name, # Строка
-        poll_start_time, # YYYY-MM-DD HH:MM:SS
-        poll_finish_time, # YYYY-MM-DD HH:MM:SS
-        poll_description # Строка
-        questions: [
-            {
-                id,
-                question_text,           
-                question_type,       
-                choices: [      
-                    { id, question, choice_text },
-                    ...
-                ]
-            },
-            ...
-        ]
+    {   
+        id, # id ответа
+        user_id, # id пользователя
+        poll : [{...}]
+        question : [{...}]
+        choice, # Строка
+        choice_text # Строка
     },
     ...
 ]
