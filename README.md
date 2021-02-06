@@ -80,7 +80,7 @@ python3 manage.py runserver
 1. URL: http://127.0.0.1:8000/api/v1/token/
 2. request : GET
 3. Тело ответа :
-```json
+```
 {
     username, # Строка
     password, # Строка
@@ -91,7 +91,7 @@ python3 manage.py runserver
 1. URL: http://127.0.0.1:8000/api/v1/polls/create
 2. request : POST
 3. Тело ответа :
-```json
+```
 {   
    id, # Натуральное число - id опроса
    poll_name, # Строка
@@ -116,7 +116,7 @@ python3 manage.py runserver
 1. URL: http://127.0.0.1:8000/api/v1/polls/update_or_delete/<int:poll_id>/
 2. request : PATCH
 3. Тело ответа :
-```json
+```
 {
    id, # Натуральное число - id опроса
    poll_name, # Строка
@@ -147,7 +147,7 @@ python3 manage.py runserver
 1. URL: http://127.0.0.1:8000/api/v1/question/create
 2. request : POST
 3. Тело ответа :
-```json
+```
 {
    id, # Натуральное число - id вопроса в опросе
    question_text, # Строка
@@ -159,10 +159,10 @@ python3 manage.py runserver
 }
 ```
 #### Изменение вопросов в опросе
-1. URL: http://127.0.0.1:8000/api/v1/question/update_or_delete/<int:poll_id>/
+1. URL: http://127.0.0.1:8000/api/v1/question/update_or_delete/[poll_id]/
 2. request : PATCH
 3. Тело ответа :
-```json
+```
 {
    id, # Натуральное число - id вопроса в опросе
    question_text, # Строка
@@ -175,7 +175,7 @@ python3 manage.py runserver
 ```
 
 #### Удаление вопросов в опросе
-1. URL: http://127.0.0.1:8000/api/v1/question/update_or_delete/<int:poll_id>/
+1. URL: http://127.0.0.1:8000/api/v1/question/update_or_delete/[poll_id]/
 2. request : DELETE
 
 ### Варианты выборов в опросе
@@ -183,7 +183,7 @@ python3 manage.py runserver
 1. URL: http://127.0.0.1:8000/api/v1/choice/create
 2. request : POST
 3. Тело ответа :
-```json
+```
 {
    id, # Натуральное число - id варианта выбора в опросе
    question : [
@@ -193,10 +193,10 @@ python3 manage.py runserver
 }
 ```
 #### Изменение варианта выбора в опросе
-1. URL: http://127.0.0.1:8000/api/v1/choice/update_or_delete/<int:choice_id>/
+1. URL: http://127.0.0.1:8000/api/v1/choice/update_or_delete/[choice_id]/
 2. request : PATCH
 3. Тело ответа :
-```json
+```
 {
    id, # Натуральное число - id варианта выбора в опросе
    choice_text # Строка
@@ -204,7 +204,7 @@ python3 manage.py runserver
 ```
 
 #### Удаление варианта выбора из опроса
-1. URL: http://127.0.0.1:8000/api/v1/choice/update_or_delete/<int:choice_id>/
+1. URL: http://127.0.0.1:8000/api/v1/choice/update_or_delete/[choice_id]/
 2. request : DELETE
 
 
@@ -214,7 +214,7 @@ python3 manage.py runserver
 1. URL: http://127.0.0.1:8000/api/v1/polls/available/
 2. request : GET
 3. Тело ответа :
-```json
+```
 [
     {
         poll_name, # Строка
@@ -243,7 +243,7 @@ python3 manage.py runserver
 1. URL: http://127.0.0.1:8000/api/v1/answer/create/
 2. request : POST
 3. Тело ответа :
-```json
+```
 {
     id, # id ответа
     user_id, # id пользователя
@@ -254,10 +254,10 @@ python3 manage.py runserver
 }
 ```
 ##### Вывод ответа 
-1. URL: http://127.0.0.1:8000/api/v1/answer/view/<int:user_id>/
+1. URL: http://127.0.0.1:8000/api/v1/answer/view/[user_id]/
 2. request : GET
 3. Тело ответа :
-```json
+```
 [
     {   
         id, # id ответа
