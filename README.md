@@ -43,19 +43,6 @@ cd mysite
 ```python
 django-admin startapp polls
 ```
-* Добавляем надстройки в mysite/settings.py
-
-```python
-INSTALLED_APPS = (
-    # ... 
-    'rest_framework',
-    'polls',
-)
-
-LANGUAGE_CODE = 'ru'
-
-TIME_ZONE = 'Europe/Moscow'
-```
 ### Запуск проекта
 * Синхронизация базы данных с моделями приложений
 ```python
